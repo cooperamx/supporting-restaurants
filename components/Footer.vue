@@ -1,5 +1,5 @@
 <template>
-  <footer class="Footer">
+  <footer class="container grid">
     <div class="columns is-vcentered">
       <div class="column is-one-quarter has-text-left">
         <p><a href="/" class="logo is-size-4 has-text-weight-bold">Coopera.mx</a></p>
@@ -31,8 +31,7 @@ footer
 
 +desktop()
   footer
-    padding: 32px 170px
-
+    padding: 32px 0
   .link
     margin-left: 24px
     margin-bottom: 0
