@@ -1,5 +1,5 @@
 <template>
-  <div class="container grid">
+  <div class="container is-fluid grid">
     <section class="columns is-multiline">
       <RestaurantItem
         v-for="(restaurant, index) in items"
@@ -62,6 +62,7 @@ export default {
 
 <style scoped>
 .grid {
-  margin-top: 24px;
+  margin-top: 4rem;
+  margin-bottom: 20rem;
 }
 </style>

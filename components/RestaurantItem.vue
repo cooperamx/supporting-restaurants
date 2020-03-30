@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter is-2-widescreen is-half-mobile">
     <div class="product-item" @click="$emit('click')">
       <img
         class="product-item__photo"
@@ -51,6 +51,8 @@ export default {
 .product-item__photo {
   border-radius: 16px;
   margin-bottom: 8px;
+  width: 100%;
+  height: auto;
 }
 
 .product-item__name {
