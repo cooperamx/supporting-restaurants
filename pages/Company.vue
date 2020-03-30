@@ -29,6 +29,5 @@ export default {
 
 .__list {
   padding: 2rem;
-  background-color: #fff;
 }
 </style>
