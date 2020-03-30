@@ -1,5 +1,5 @@
 <template>
-  <div class="column is-one-quarter is-2-widescreen is-half-mobile">
+  <div class="column is-half-mobile is-one-quarter-tablet is-one-quarter-desktop is-2-widescreen">
     <div class="product-item" @click="$emit('click')">
       <img
         class="product-item__photo"
