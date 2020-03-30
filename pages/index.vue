@@ -23,6 +23,14 @@ export default {
 </script>
 
 <style>
+:root {
+  --main-bg: #FFFFFF;
+  --head-bg: #FFF0C6;
+  --primary: #FF5757;
+  --main-text: #0B0E1C;
+  --grid-bg: #DAEF82;
+}
+
 .container {
 
 }
