@@ -18,22 +18,29 @@
         </div>
       </div>
     </div>
+    <div class="__glich">
+      <div class="__circle"></div>
+    </div>
   </section>
 </template>
 
 <script>
-import Buttom from './ui/Buttom'
+import Buttom from './ui/Buttom';
 
 export default {
   components: {
     Buttom
   }
-}
+};
 </script>
 
 <style scoped>
 .hero {
+  background:
+    url(../assets/header-01.png) left bottom no-repeat,
+    url(../assets/header-02.png) right bottom no-repeat;
   background-color: var(--head-bg);
+  background-size: 30%;
   color: var(--main-text);
   height: 700px;
 }
@@ -47,5 +54,21 @@ export default {
 .hero .title {
   color: var(--primary);
   font-size: 3rem;
+}
+
+.__glich {
+  align-items: flex-start;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: -10px;
+}
+
+.__circle {
+  background: var(--main-bg);
+  border-radius: 200% 200% 0 0;
+  height: 130px;
+  width: 100vw;
 }
 </style>
