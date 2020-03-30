@@ -69,7 +69,7 @@ export default {
   border: solid 5px rgba(151, 151, 151, 0.25);
   border-width: 0 1px 1px 0;
   top: 50px;
-  left: 5px;
+  /* left: 5px; */
   background-color: var(--main-bg);
   border-bottom-right-radius: calc(var(--size) * 2);
   border-top-right-radius: calc(var(--size) * 2);
@@ -98,7 +98,7 @@ export default {
   border: solid 5px rgba(151, 151, 151, 0.25);
   border-width: 1px 0 0 1px;
   top: 50px;
-  right: 5px;
+  right: 15px;
   background-color: var(--main-bg);
   border-bottom-left-radius: calc(var(--size) * 2);
   border-top-left-radius: calc(var(--size) * 2);
