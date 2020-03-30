@@ -1,5 +1,7 @@
 # supporting-restaurants
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f2f3f3d-355a-4d6e-924f-d0941bb46e66/deploy-status)](https://app.netlify.com/sites/cooperamx/deploys)
+
 > web for help
 
 ## Build Setup
