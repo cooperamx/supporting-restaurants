@@ -2,7 +2,7 @@
   <div class="__container">
     <div>
       <Header />
-      <Grid />
+      <RestaurantGrid />
       <Footer />
     </div>
   </div>
@@ -10,13 +10,13 @@
 
 <script>
 import Header from '~/components/Header.vue'
-import Grid from '~/components/Grid.vue'
+import RestaurantGrid from '~/components/RestaurantGrid.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Header,
-    Grid,
+    RestaurantGrid,
     Footer
   }
 }
