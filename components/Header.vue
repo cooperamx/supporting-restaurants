@@ -54,6 +54,8 @@ export default {
 .hero .title {
   color: var(--primary);
   font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Poppins';
 }
 
 .__glich {
