@@ -1,6 +1,5 @@
 <template>
   <header class="header">
-    <SearchBar />
     <div class=""></div>
   </header>
 </template>
