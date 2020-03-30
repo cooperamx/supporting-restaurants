@@ -1,7 +1,7 @@
 <template>
   <div class="__container">
     <div>
-      <h2>Company page</h2>
+      <CompanyHero name="Louie" address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco." website="https://louie-burguer.com.mx" />
       <div class="__list">
         <Coupon
           title="Llévate 4 por el precio de una y media"
@@ -13,10 +13,12 @@
 </template>
 
 <script>
+import CompanyHero from '../components/CompanyHero'
 import Coupon from '../components/ui/Coupon'
 
 export default {
   components: {
+    CompanyHero,
     Coupon
   }
 }
