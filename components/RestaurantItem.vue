@@ -1,15 +1,17 @@
 <template>
-  <div class="product-item card column is-one-quarter" @click="$emit('click')">
-    <img
-      class="product-item__photo"
-      :src="image"
-    />
-    <p class="product-item__name">
-      {{ name }}
-    </p>
-    </p class="product-item__location">
-      {{ location }}
-    </p>
+  <div class="column is-one-quarter">
+    <div class="product-item" @click="$emit('click')">
+      <img
+        class="product-item__photo"
+        :src="image"
+      />
+      <p class="product-item__name">
+        {{ name }}
+      </p>
+      </p class="product-item__location">
+        {{ location }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -36,15 +38,19 @@ export default {
 
 <style scoped>
 .product-item {
-  cursor: pointer;
   padding: 16px;
   color: #7E7E7E;
+  border: 1px solid #E5E5E5;
+  border-radius: 16px;
+  box-shadow: 0 16px 16px -16px rgba(0, 0, 0, 0.16);
+
+  cursor: pointer;
+  align-items: center;
 }
 
 .product-item__photo {
-  width: 230px;
-  height: 208px;
   border-radius: 16px;
+  margin-bottom: 8px;
 }
 
 .product-item__name {

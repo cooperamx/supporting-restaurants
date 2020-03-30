@@ -1,14 +1,15 @@
 <template>
-  <section class="columns is-multiline">
-    <RestaurantItem
-      v-for="(restaurant, index) in items"
-      :key="index"
-      :name="restaurant.name"
-      :image="restaurant.image"
-      :location="restaurant.location"
-    />
-    </div>
-  </section>
+  <div class="container grid">
+    <section class="columns is-multiline">
+      <RestaurantItem
+        v-for="(restaurant, index) in items"
+        :key="index"
+        :name="restaurant.name"
+        :image="restaurant.image"
+        :location="restaurant.location"
+      />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -60,6 +61,7 @@ export default {
 </script>
 
 <style scoped>
-.Grid {
+.grid {
+  margin-top: 24px;
 }
 </style>
