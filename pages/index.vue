@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="__container">
     <div>
       <Header />
       <Grid />
@@ -31,7 +31,7 @@ export default {
   --grid-bg: #DAEF82;
 }
 
-.container {
+.__container {
 
 }
 </style>

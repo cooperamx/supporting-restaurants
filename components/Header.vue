@@ -1,5 +1,5 @@
 <template>
-  <section class="hero Header">
+  <section class="hero is-primary">
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
@@ -14,7 +14,7 @@
 </template>
 
 <style scoped>
-.Header {
+.__header {
   background-color: var(--head-bg);
   color: var(--primary);
 }
