@@ -22,9 +22,6 @@
         </div>
       </div>
     </div>
-    <div class="__glich">
-      <div class="__circle"></div>
-    </div>
   </section>
 </template>
 
@@ -38,7 +35,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero {
   background:
     url(../assets/header-01.png) left bottom no-repeat,
@@ -47,34 +44,31 @@ export default {
   background-size: 30%;
   color: var(--main-text);
   height: 700px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: '';
+    height: 200vw;;
+    width: 300vw;
+    border-radius: 100%;
+    background: var(--main-bg);
+    bottom: -192vw;
+    left: -100vw;
+  }
+
+  & .title {
+    color: var(--primary);
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: 'Poppins';
+  }
 }
 
 .hero-body.is-vcentered {
   align-items: center;
   justify-content: center;
   display: flex;
-}
-
-.hero .title {
-  color: var(--primary);
-  font-size: 3rem;
-  font-weight: 800;
-  font-family: 'Poppins';
-}
-
-.__glich {
-  align-items: flex-start;
-  display: flex;
-  height: 80px;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: -10px;
-}
-
-.__circle {
-  background: var(--main-bg);
-  border-radius: 200% 200% 0 0;
-  height: 130px;
-  width: 100vw;
 }
 </style>

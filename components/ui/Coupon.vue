@@ -94,6 +94,7 @@ $diameter-circle: 20px;
     border-bottom-right-radius: $diameter-circle * 2;
     border-top-right-radius: $diameter-circle * 2;
     box-shadow: inset -3px 2px 1px 1px rgba(0, 0, 0, 0.05);
+    left: 16px;
 
     &::before {
       @include set-before;
