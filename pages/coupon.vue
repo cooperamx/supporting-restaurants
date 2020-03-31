@@ -11,10 +11,7 @@
         <h2>¡Estás a un paso de obtener tu cupón! 🤩</h2>
         <div class="columns">
           <div class="column is-half __topspace">
-            <Coupon
-              title="Llévate 2 por el precio de una y media"
-              body="In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc."
-            />
+            <Coupon :title="coupon.title" :body="coupon.body" />
 
             <FromCoupon @click="handleClick" />
           </div>
@@ -45,8 +42,8 @@ export default {
   methods: {
     handleClick() {
       sentWhatsappMessage(
-        restaurant.phone,
-        restaurant.coupons[this.$route.query.c].title
+        this.restaurant.phone,
+        this.restaurant.coupons[this.$route.query.c].title
       );
       console.warn("Sent");
     }
@@ -55,6 +52,11 @@ export default {
     return {
       restaurant: restaurants.find(r => r.uri === this.$route.query.r)
     };
+  },
+  computed: {
+    coupon() {
+      return this.restaurant.coupons[this.$route.query.c];
+    }
   }
 };
 </script>
