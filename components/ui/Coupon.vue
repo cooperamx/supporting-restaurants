@@ -5,7 +5,11 @@
         <h3>{{title}}</h3>
         <p>{{body}}</p>
       </div>
-      <Buttom text="Obtener cupón" primary @click="handleClick" />
+      <div class="columns">
+        <div class="__action column is-narrow">
+          <Buttom text="Obtener cupón" primary @click="handleClick" />
+        </div>
+      </div>
     </div>
     <div class="__circle __circle--left"></div>
     <div class="__circle __circle--right"></div>
@@ -59,6 +63,10 @@ export default {
   font-weight: bold;
   margin-bottom: .5rem;
   color: rgba(72, 71, 69, 0.7)
+}
+
+.__box .__action {
+  padding: 1rem;
 }
 
 @mixin set-before {
