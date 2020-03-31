@@ -5,7 +5,9 @@
 </template>
 
 <script>
-// TODO: include back navigation @click="$router.go(-1)"
+// TODO:
+// include back navigation @click="$router.go(-1)"
+// and use n-link component
 
 export default {
   props: {
