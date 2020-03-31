@@ -30,7 +30,7 @@
               </div>
             </div>
 
-            <Buttom text="Enviar mensaje a {company.name}" primary />
+            <Buttom text="Enviar mensaje a {company.name}" primary @click="handleClick" />
           </form>
         </div>
         <div class="column is-half">
@@ -45,6 +45,16 @@
 import Buttom from "../components/ui/Buttom";
 import Coupon from "../components/ui/Coupon";
 
+/**
+ * entWhatsappMessage
+ * @param {number} phone - conpany phone number
+ * @param {number} message - text from ticket context
+ */
+function sentWhatsappMessage(phone, message) {
+    const URL_BASE = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`
+    window.childWindow = window.open(URL_BASE, '__blank')
+}
+
 export default {
   components: {
     Buttom,
@@ -52,7 +62,8 @@ export default {
   },
   methods: {
     handleClick() {
-      console.warn("bu!");
+      sentWhatsappMessage();
+      console.warn("Sent");
     }
   }
 };

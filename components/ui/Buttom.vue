@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     handleClick (e) {
-      this.$emit('click', e)
-      console.warn('bt')
+      this.$emit('click', e);
     }
   }
 }
