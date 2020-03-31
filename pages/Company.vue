@@ -7,15 +7,17 @@
         website="https://louie-burguer.com.mx"
         logo="https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png"
       />
-      <div class="__list columns is-multiline">
-        <Coupon
-          v-for="(coupon, index) in coupons"
-          :key="index"
-          :title="coupon.title"
-          :body="coupon.body"
-          class="column is-one-third-desktop is-half-tablet is-full-mobile"
-          @click="handlerClick"
-        />
+      <div class="container is-widescreen">
+        <div class="__list columns is-multiline">
+          <Coupon
+            v-for="(coupon, index) in coupons"
+            :key="index"
+            :title="coupon.title"
+            :body="coupon.body"
+            class="column is-one-third-desktop is-half-tablet is-full-mobile"
+            @click="handlerClick"
+          />
+        </div>
       </div>
       <Footer />
     </div>
