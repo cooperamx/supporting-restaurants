@@ -60,8 +60,8 @@ export default {
 
 <style>
 .__container h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 800;
+  font-size: 2rem;
 }
 
 .__topspace {
