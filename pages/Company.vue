@@ -12,6 +12,7 @@
           @click="handlerClick"
         />
       </div>
+      <Footer />
     </div>
   </div>
 </template>
@@ -19,11 +20,13 @@
 <script>
 import CompanyHero from '../components/CompanyHero'
 import Coupon from '../components/ui/Coupon'
+import Footer from '../components/Footer'
 
 export default {
   components: {
     CompanyHero,
-    Coupon
+    Coupon,
+    Footer,
   },
   methods: {
     handlerClick() {
