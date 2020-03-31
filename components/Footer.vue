@@ -1,13 +1,15 @@
 <template>
-  <footer class="container grid">
-    <div class="columns is-vcentered">
-      <div class="column is-one-quarter has-text-left">
-        <p><a href="/" class="logo is-size-4 has-text-weight-bold">Coopera.mx</a></p>
-      </div>
-      <div class="column has-text-right has-text-left-mobile">
-        <a class="link is-size-7 is-block-mobile" href="/como-funciona">Cómo funciona</a>
-        <a class="link is-size-7 is-block-mobile" href="/terminos-y-condiciones">Términos y condiciones</a>
-        <a class="link is-size-7 is-block-mobile" href="/apoyar">Apoya este proyecto</a>
+  <footer>
+    <div class="container is-widescreen">
+      <div class="columns is-vcentered">
+        <div class="column is-one-quarter has-text-left">
+          <p><a href="/" class="logo is-size-4 has-text-weight-bold">Coopera.mx</a></p>
+        </div>
+        <div class="column has-text-right has-text-left-mobile">
+          <a class="link is-size-7 is-block-mobile" href="/como-funciona">Cómo funciona</a>
+          <a class="link is-size-7 is-block-mobile" href="/terminos-y-condiciones">Términos y condiciones</a>
+          <a class="link is-size-7 is-block-mobile" href="/apoyar">Apoya este proyecto</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -31,7 +33,7 @@ footer
 
 +desktop()
   footer
-    padding: 32px 0
+    padding: 32px
   .link
     margin-left: 24px
     margin-bottom: 0
