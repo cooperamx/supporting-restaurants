@@ -8,7 +8,7 @@
       <p class="product-item__name">
         {{ name }}
       </p>
-      </p class="product-item__location">
+      <p class="product-item__location">
         {{ location }}
       </p>
     </div>

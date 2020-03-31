@@ -7,46 +7,66 @@
         :name="restaurant.name"
         :image="restaurant.image"
         :location="restaurant.location"
+        @click="handlerClick"
       />
     </section>
   </div>
 </template>
 
 <script>
-import RestaurantItem from './RestaurantItem.vue';
+import RestaurantItem from "./RestaurantItem.vue";
 
 export default {
-  name: 'ProductGrid',
+  name: "ProductGrid",
 
   components: { RestaurantItem },
-
-  data: function () {
+  methods: {
+    handlerClick() {
+      this.$router.push({
+        path: "/company"
+      });
+    }
+  },
+  data() {
     return {
-      items: [{
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }, {
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }, {
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }, {
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }, {
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }, {
-        name: 'Louie Burger',
-        image: 'https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png',
-        location: 'Guadalajara, Jalisco'
-      }]
+      items: [
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        },
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        },
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        },
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        },
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        },
+        {
+          name: "Louie Burger",
+          image:
+            "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+          location: "Guadalajara, Jalisco"
+        }
+      ]
     };
   }
 };
