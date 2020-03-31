@@ -1,5 +1,5 @@
 <template>
-  <div class="__Coupon">
+  <div class="__Coupon" >
     <div class="__box">
       <div class="__text">
         <h3>Llévate 2 por el precio de una y media</h3>
@@ -7,8 +7,8 @@
       </div>
       <Buttom text="Obtener cupón" primary />
     </div>
-    <div class="__circle_left"></div>
-    <div class="__circle_right"></div>
+    <div class="__circle __circle--left"></div>
+    <div class="__circle __circle--right"></div>
   </div>
 </template>
 
@@ -22,16 +22,11 @@ export default {
   props: {
     text: String,
     primary: Boolean
-  },
-  methods: {
-    handleClick (e) {
-      this.$emit('click', e)
-    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .__Coupon {
   position: relative;
   background-color: var(--main-bg);
@@ -61,62 +56,57 @@ export default {
   color: rgba(72, 71, 69, 0.7)
 }
 
-.__circle_left {
-  --size: 20px;
-  position: absolute;
-  width: calc(var(--size) + 0px);
-  height: calc(var(--size) * 2);
-  border: solid 5px rgba(151, 151, 151, 0.25);
-  border-width: 0 1px 1px 0;
-  top: 50px;
-  /* left: 5px; */
-  background-color: var(--main-bg);
-  border-bottom-right-radius: calc(var(--size) * 2);
-  border-top-right-radius: calc(var(--size) * 2);
-  box-shadow: inset -3px 2px 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-.__circle_left::before {
-  --size: calc(20px - 1px);
+@mixin set-before {
   position: absolute;
   display: block;
   content: '';
-  width: calc(var(--size) + 2px);
-  height: calc(var(--size) * 2);
+  width: $diameter-circle + 1px;
+  height: ($diameter-circle - 1px) * 2;
   background-color: var(--main-bg);
-  border-bottom-right-radius: calc(var(--size) * 2);
-  border-top-right-radius: calc(var(--size) * 2);
-  top: 1px;
-  left: -10px;
 }
 
-.__circle_right {
-  --size: 20px;
+$diameter-circle: 20px;
+
+.__circle {
   position: absolute;
-  width: var(--size);
-  height: calc(var(--size) * 2);
+  width: $diameter-circle;
+  height: $diameter-circle * 2;
   border: solid 5px rgba(151, 151, 151, 0.25);
-  border-width: 1px 0 0 1px;
-  top: 50px;
-  right: 15px;
   background-color: var(--main-bg);
-  border-bottom-left-radius: calc(var(--size) * 2);
-  border-top-left-radius: calc(var(--size) * 2);
-  box-shadow: inset 3px 2px 1px 1px rgba(0, 0, 0, 0.05);
+  top: 50px;
+
+  &--left {
+    border-width: 0 1px 1px 0;
+    /* left: 5px; */
+    border-bottom-right-radius: $diameter-circle * 2;
+    border-top-right-radius: $diameter-circle * 2;
+    box-shadow: inset -3px 2px 1px 1px rgba(0, 0, 0, 0.05);
+
+    &::before {
+      @include set-before;
+      border-bottom-right-radius: $diameter-circle * 2;
+      border-top-right-radius: $diameter-circle * 2;
+      top: 0;
+      left: -10px;
+    }
+  }
+
+  &--right {
+    border-width: 1px 0 0 1px;
+    border-bottom-left-radius: $diameter-circle * 2;
+    border-top-left-radius: $diameter-circle * 2;
+    box-shadow: inset 3px 2px 1px 1px rgba(0, 0, 0, 0.05);
+    right: 15px;
+
+    &::before {
+      @include set-before;
+      border-bottom-left-radius: $diameter-circle * 2;
+      border-top-left-radius: $diameter-circle * 2;
+      top: 0;
+      right: -10px;
+    }
+  }
 }
 
-.__circle_right::before {
-  --size: calc(20px - 1px);
-  position: absolute;
-  display: block;
-  content: '';
-  width: calc(var(--size) + 2px);
-  height: calc(var(--size) * 2);
-  background-color: var(--main-bg);
-  border-bottom-left-radius: calc(var(--size) * 2);
-  border-top-left-radius: calc(var(--size) * 2);
-  top: 1px;
-  right: -10px;
-}
 
 </style>
