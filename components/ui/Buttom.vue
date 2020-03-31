@@ -32,7 +32,6 @@ export default {
   display: inline-block;
   font-weight: bold;
   font-size: 1.2rem;
-  margin: .5rem;
   padding: .5rem 1rem;
   cursor: pointer;
   user-select: none;
