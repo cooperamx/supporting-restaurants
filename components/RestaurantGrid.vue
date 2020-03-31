@@ -15,7 +15,7 @@
 
 <script>
 import RestaurantItem from "./RestaurantItem.vue";
-import { restaurants } from "../libs/dbStatic"
+import { restaurants } from "../libs/dbStatic";
 
 export default {
   name: "ProductGrid",
@@ -24,7 +24,8 @@ export default {
   methods: {
     handlerClick(uri) {
       this.$router.push({
-        path: `/company?r=${uri}`
+        path: `/company`,
+        query: { r: uri }
       });
     }
   },

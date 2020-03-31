@@ -1,10 +1,10 @@
 <template>
   <div>
     <CompanyHero
-      name="Louie Burger"
-      address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco."
-      website="https://louie-burguer.com.mx"
-      logo="https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png"
+      :name="restaurant.name"
+      :address="restaurant.location"
+      :website="restaurant.website"
+      :logo="restaurant.image"
     />
     <div class="columns __container __topspace">
       <div class="column is-three-fifths is-offset-one-fifth">
@@ -29,10 +29,11 @@
 
 <script>
 import Buttom from "../components/ui/Buttom";
-import CompanyHero from '../components/CompanyHero'
+import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
 import FromCoupon from "../components/FromCoupon";
 import { sentWhatsappMessage } from "../libs/utils";
+import { restaurants } from "../libs/dbStatic";
 
 export default {
   components: {
@@ -42,10 +43,18 @@ export default {
     FromCoupon
   },
   methods: {
-    handleClick () {
-      sentWhatsappMessage();
+    handleClick() {
+      sentWhatsappMessage(
+        restaurant.phone,
+        restaurant.coupons[this.$route.query.c].title
+      );
       console.warn("Sent");
     }
+  },
+  data() {
+    return {
+      restaurant: restaurants.find(r => r.uri === this.$route.query.r)
+    };
   }
 };
 </script>

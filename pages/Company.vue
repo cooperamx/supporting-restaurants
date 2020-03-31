@@ -15,7 +15,7 @@
             :title="coupon.title"
             :body="coupon.body"
             class="column is-one-third-desktop is-half-tablet is-full-mobile"
-            @click="handlerClick"
+            @click="handlerClick(restaurant.uri, index)"
           />
         </div>
       </div>
@@ -37,9 +37,15 @@ export default {
     Footer
   },
   methods: {
-    handlerClick() {
+    handlerClick(uri, couponId) {
+      console.warn(uri);
+
       this.$router.push({
-        path: "/coupon"
+        path: `/coupon`,
+        query: {
+          r: uri,
+          c: couponId
+        }
       });
     }
   },
