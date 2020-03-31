@@ -9,6 +9,7 @@
           :title="coupon.title"
           :body="coupon.body"
           class="column is-one-third-desktop is-half-tablet is-full-mobile"
+          @click="handlerClick"
         />
       </div>
     </div>
@@ -24,7 +25,13 @@ export default {
     CompanyHero,
     Coupon
   },
-
+  methods: {
+    handlerClick() {
+      this.$router.push({
+        path: "/coupons"
+      });
+    }
+  },
   data: function () {
     return {
       coupons: [{
