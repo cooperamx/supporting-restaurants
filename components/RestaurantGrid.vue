@@ -1,5 +1,5 @@
 <template>
-  <div class="container is-fluid grid">
+  <div class="container is-widescreen grid">
     <section class="columns is-multiline is-mobile">
       <RestaurantItem
         v-for="(restaurant, index) in items"
