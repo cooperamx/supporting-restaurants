@@ -38,7 +38,7 @@ export default {
   methods: {
     handlerClick() {
       this.$router.push({
-        path: "/coupons"
+        path: "/coupon"
       });
     }
   },
