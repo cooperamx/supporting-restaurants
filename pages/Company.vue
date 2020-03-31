@@ -4,10 +4,11 @@
       <CompanyHero name="Louie" address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco." website="https://louie-burguer.com.mx" />
       <div class="__list columns is-multiline">
         <Coupon
-          v-for="coupon in coupons"
+          v-for="(coupon, index) in coupons"
+          :key="index"
+          :title="coupon.title"
+          :body="coupon.body"
           class="column is-one-third-desktop is-half-tablet is-full-mobile"
-          title="coupon.title"
-          body="coupon.body"
         />
       </div>
     </div>
