@@ -5,6 +5,8 @@
 </template>
 
 <script>
+// TODO: include back navigation @click="$router.go(-1)"
+
 export default {
   props: {
     label: String,

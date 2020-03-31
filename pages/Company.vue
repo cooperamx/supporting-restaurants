@@ -2,15 +2,15 @@
   <div class="__container">
     <div>
       <CompanyHero
-        name="Louie Burger"
-        address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco."
-        website="https://louie-burguer.com.mx"
-        logo="https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png"
+        :name="restaurant.name"
+        :address="restaurant.location"
+        :website="restaurant.website"
+        :logo="restaurant.image"
       />
       <div class="container is-widescreen">
         <div class="__list columns is-multiline">
           <Coupon
-            v-for="(coupon, index) in coupons"
+            v-for="(coupon, index) in restaurant.coupons"
             :key="index"
             :title="coupon.title"
             :body="coupon.body"
@@ -25,15 +25,16 @@
 </template>
 
 <script>
-import CompanyHero from '../components/CompanyHero'
-import Coupon from '../components/ui/Coupon'
-import Footer from '../components/Footer'
+import CompanyHero from "../components/CompanyHero";
+import Coupon from "../components/ui/Coupon";
+import Footer from "../components/Footer";
+import { restaurants } from "../libs/dbStatic";
 
 export default {
   components: {
     CompanyHero,
     Coupon,
-    Footer,
+    Footer
   },
   methods: {
     handlerClick() {
@@ -42,30 +43,12 @@ export default {
       });
     }
   },
-  data: function () {
+  data () {
     return {
-      coupons: [{
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }, {
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }, {
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }, {
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }, {
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }, {
-        title: 'Llévate 2 por el precio de una y media',
-        body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
-      }]
+      restaurant: restaurants.find(r => r.uri === this.$route.query.r)
     }
   }
-}
+};
 </script>
 
 <style scoped>
