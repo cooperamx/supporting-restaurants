@@ -2,10 +2,10 @@
   <div class="__Coupon" >
     <div class="__box">
       <div class="__text">
-        <h3>Llévate 2 por el precio de una y media</h3>
-        <p>In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.</p>
+        <h3>{{title}}</h3>
+        <p>{{body}}</p>
       </div>
-      <Buttom text="Obtener cupón" primary />
+      <Buttom text="Obtener cupón" primary @click="handleClick" />
     </div>
     <div class="__circle __circle--left"></div>
     <div class="__circle __circle--right"></div>
@@ -20,8 +20,13 @@ export default {
     Buttom
   },
   props: {
-    text: String,
-    primary: Boolean
+    title: String,
+    body: String
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
+    }
   }
 }
 </script>

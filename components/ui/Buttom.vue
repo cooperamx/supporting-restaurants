@@ -4,6 +4,7 @@
       __buttom : true,
       __primary: primary
     }"
+    @click="handleClick"
   >
     {{text}}
   </div>
@@ -14,6 +15,12 @@ export default {
   props: {
     text: String,
     primary: Boolean
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('click', e)
+      console.warn('bt')
+    }
   }
 }
 </script>
@@ -28,6 +35,8 @@ export default {
   font-size: 1.2rem;
   margin: .5rem;
   padding: .5rem 1rem;
+  cursor: pointer;
+  user-select: none;
 }
 
 .__primary {
