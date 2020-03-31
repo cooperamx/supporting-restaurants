@@ -1,40 +1,26 @@
 <template>
-  <div class="columns __container">
-    <div class="column is-three-fifths is-offset-one-fifth">
-      <h2>¡Estás a un paso de obtener tu cupón! 🤩</h2>
-      <div class="columns">
-        <div class="column is-half __topspace">
-          <Coupon
-            title="Llévate 2 por el precio de una y media"
-            body="In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc."
-            @click="handleClick"
-          />
+  <div>
+    <CompanyHero
+      name="Louie Burger"
+      address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco."
+      website="https://louie-burguer.com.mx"
+      logo="https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png"
+    />
+    <div class="columns __container __topspace">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <h2>¡Estás a un paso de obtener tu cupón! 🤩</h2>
+        <div class="columns">
+          <div class="column is-half __topspace">
+            <Coupon
+              title="Llévate 2 por el precio de una y media"
+              body="In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc."
+            />
 
-          <form action class="__topspace">
-            <div class="field">
-              <label class="label">Nombre completo</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Escribe tu nombre" />
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Correo electrónico</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Coloca tu corre electronico" />
-              </div>
-            </div>
-            <div class="field">
-              <label class="label">Teléfono (Opcional)</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="Dejanos tu telefono" />
-              </div>
-            </div>
-
-            <Buttom text="Enviar mensaje a {company.name}" primary @click="handleClick" />
-          </form>
-        </div>
-        <div class="column is-half">
-          <img src="../assets/coupons.png" alt="coupons" />
+            <FromCoupon @click="handleClick" />
+          </div>
+          <div class="column is-half">
+            <img src="../assets/coupons.png" alt="coupons" />
+          </div>
         </div>
       </div>
     </div>
@@ -43,25 +29,20 @@
 
 <script>
 import Buttom from "../components/ui/Buttom";
+import CompanyHero from '../components/CompanyHero'
 import Coupon from "../components/ui/Coupon";
-
-/**
- * entWhatsappMessage
- * @param {number} phone - conpany phone number
- * @param {number} message - text from ticket context
- */
-function sentWhatsappMessage(phone, message) {
-    const URL_BASE = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`
-    window.childWindow = window.open(URL_BASE, '__blank')
-}
+import FromCoupon from "../components/FromCoupon";
+import { sentWhatsappMessage } from "../libs/utils";
 
 export default {
   components: {
     Buttom,
-    Coupon
+    CompanyHero,
+    Coupon,
+    FromCoupon
   },
   methods: {
-    handleClick() {
+    handleClick () {
       sentWhatsappMessage();
       console.warn("Sent");
     }
