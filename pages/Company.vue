@@ -1,7 +1,12 @@
 <template>
-  <div class="__container container is-fluid">
+  <div class="__container">
     <div>
-      <CompanyHero name="Louie" address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco." website="https://louie-burguer.com.mx" />
+      <CompanyHero
+        name="Louie Burger"
+        address="Pedro Moreno 1290, col. Americana, Guadalajara Jalisco."
+        website="https://louie-burguer.com.mx"
+        logo="https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png"
+      />
       <div class="__list columns is-multiline">
         <Coupon
           v-for="(coupon, index) in coupons"
@@ -63,10 +68,14 @@ export default {
 
 <style scoped>
 .__container {
-
+  position: relative;
 }
 
 .__list {
   padding: 2rem;
+}
+
+.asd {
+  background-color: red;
 }
 </style>
