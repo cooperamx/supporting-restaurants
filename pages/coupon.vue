@@ -17,8 +17,7 @@
       <div class="columns is-vcentered">
         <div class="column is-half">
           <Coupon :title="coupon.title" :body="coupon.body" />
-
-          <FromCoupon @click="handleClick" />
+            <FromCoupon :name="restaurant.name" @click="handleClick" />
         </div>
         <div class="column is-half is-hidden-touch">
           <img src="../assets/coupons.png" alt="coupons" />
@@ -33,7 +32,7 @@ import Layout from "../components/Layout";
 import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
 import FromCoupon from "../components/FromCoupon";
-import { sentWhatsappMessage } from "../libs/utils";
+import { sendWhatsappMessage } from "../libs/utils";
 import { restaurants } from "../libs/dbStatic";
 
 export default {
@@ -45,11 +44,11 @@ export default {
   },
   methods: {
     handleClick() {
-      sentWhatsappMessage(
+      sendWhatsappMessage(
         this.restaurant.phone,
         this.restaurant.coupons[this.$route.query.c].title
       );
-      console.warn("Sent");
+      console.warn("Send");
     }
   },
   data() {

@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <Button text="Enviar mensaje a {company.name}" primary @click="handleClick" />
+      <Button :text="'Enviar mensaje a ' + name" primary @click="handleClick" />
     </form>
   </div>
 </template>
@@ -31,6 +31,9 @@ import Button from "./ui/Button"
 export default {
   components: {
     Button
+  },
+  props: {
+    name: String,
   },
   methods: {
     handleClick (e) {
