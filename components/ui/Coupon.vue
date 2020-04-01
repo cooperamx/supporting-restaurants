@@ -1,18 +1,20 @@
 <template>
-  <div class="__Coupon" >
-    <div class="__box">
-      <div class="__text">
-        <h3>{{title}}</h3>
-        <p>{{body}}</p>
-      </div>
-      <div class="columns">
-        <div class="__action column is-narrow">
-          <Buttom text="Obtener cupón" primary @click="handleClick" />
+  <div>
+    <div class="__coupon">
+      <div class="__box">
+        <div class="__text">
+          <h3>{{title}}</h3>
+          <p>{{body}}</p>
+        </div>
+        <div class="columns">
+          <div class="__action column is-narrow">
+            <Buttom text="Obtener cupón" primary @click="handleClick" />
+          </div>
         </div>
       </div>
+      <div class="__circle __circle--left"></div>
+      <div class="__circle __circle--right"></div>
     </div>
-    <div class="__circle __circle--left"></div>
-    <div class="__circle __circle--right"></div>
   </div>
 </template>
 
@@ -36,10 +38,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.__Coupon {
+.__coupon {
   position: relative;
   background-color: var(--main-bg);
   overflow: hidden;
+  padding: 0.75rem;
+  margin: -0.75rem;
 }
 
 .__box {
@@ -47,8 +51,8 @@ export default {
   color: var(--main-text);
   border: solid 1px rgba(151, 151, 151, 0.25);
   padding: 2rem 2.5rem 1rem 2.5rem;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   margin: 5px;
+  box-shadow: 0px 12px 16px -12px rgba(0,0,0,0.2);
   border-radius: 10px;
 }
 
@@ -90,11 +94,10 @@ $diameter-circle: 20px;
 
   &--left {
     border-width: 0 1px 1px 0;
-    /* left: 5px; */
     border-bottom-right-radius: $diameter-circle * 2;
     border-top-right-radius: $diameter-circle * 2;
     box-shadow: inset -3px 2px 1px 1px rgba(0, 0, 0, 0.05);
-    left: 16px;
+    left: 17px;
 
     &::before {
       @include set-before;
@@ -110,7 +113,7 @@ $diameter-circle: 20px;
     border-bottom-left-radius: $diameter-circle * 2;
     border-top-left-radius: $diameter-circle * 2;
     box-shadow: inset 3px 2px 1px 1px rgba(0, 0, 0, 0.05);
-    right: 15px;
+    right: 17px;
 
     &::before {
       @include set-before;
