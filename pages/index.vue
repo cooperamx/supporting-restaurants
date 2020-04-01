@@ -1,23 +1,24 @@
 <template>
-  <div class="__container">
-    <div>
+  <Layout>
+    <div slot="header">
       <Header />
-      <RestaurantGrid />
-      <Footer />
     </div>
-  </div>
+    <div slot="main">
+      <RestaurantGrid />
+    </div>
+  </Layout>
 </template>
 
 <script>
+import Layout from '~/components/Layout.vue'
 import Header from '~/components/Header.vue'
 import RestaurantGrid from '~/components/RestaurantGrid.vue'
-import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
+    Layout,
     Header,
     RestaurantGrid,
-    Footer
   }
 }
 </script>
