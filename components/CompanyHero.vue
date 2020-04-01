@@ -6,7 +6,7 @@
         <div class="section">
           <Link label="< Volver a inicio" href="/" />
         </div>
-        <div class="section company-info columns is-mobile">
+        <div class="section company-info columns is-vcentered is-mobile">
           <div class="column is-narrow">
             <figure class="image is-96x96">
               <img :src="logo">
