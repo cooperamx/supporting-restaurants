@@ -66,9 +66,7 @@ export default {
   }
 }
 
-.hero-body.is-vcentered {
-  align-items: center;
-  justify-content: center;
-  display: flex;
+.hero-body {
+  padding: 9rem 1.5rem 3rem 1.5rem;
 }
 </style>
