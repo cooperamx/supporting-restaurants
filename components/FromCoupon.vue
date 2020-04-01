@@ -20,17 +20,17 @@
         </div>
       </div>
 
-      <Buttom text="Enviar mensaje a {company.name}" primary @click="handleClick" />
+      <Button text="Enviar mensaje a {company.name}" primary @click="handleClick" />
     </form>
   </div>
 </template>
 
 <script>
-import Buttom from "./ui/Buttom"
+import Button from "./ui/Button"
 
 export default {
   components: {
-    Buttom
+    Button
   },
   methods: {
     handleClick (e) {

@@ -30,7 +30,7 @@
 
 <script>
 import Layout from "../components/Layout";
-import Buttom from "../components/ui/Buttom";
+import Button from "../components/ui/Button";
 import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
 import FromCoupon from "../components/FromCoupon";
@@ -40,7 +40,7 @@ import { restaurants } from "../libs/dbStatic";
 export default {
   components: {
     Layout,
-    Buttom,
+    Button,
     CompanyHero,
     Coupon,
     FromCoupon

@@ -12,18 +12,18 @@
     </div>
     <div class="level-right">
       <div class="level-item">
-        <Buttom class="is-size-7" text="Soy un restaurante" primary />
+        <Button class="is-size-7" text="Soy un restaurante" primary />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Buttom from './Buttom';
+import Button from './Button';
 
 export default {
   components: {
-    Buttom
+    Button
   }
 };
 </script>

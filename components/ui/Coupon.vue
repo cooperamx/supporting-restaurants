@@ -8,7 +8,7 @@
         </div>
         <div class="columns">
           <div class="__action column is-narrow">
-            <Buttom text="Obtener cupón" primary @click="handleClick" />
+            <Button text="Obtener cupón" primary @click="handleClick" />
           </div>
         </div>
       </div>
@@ -19,11 +19,11 @@
 </template>
 
 <script>
-import Buttom from './Buttom'
+import Button from './Button'
 
 export default {
   components: {
-    Buttom
+    Button
   },
   props: {
     title: String,
