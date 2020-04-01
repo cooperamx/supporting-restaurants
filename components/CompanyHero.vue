@@ -26,13 +26,13 @@
 <script>
 import Header from './ui/Header';
 import Link from './ui/Link';
-import Buttom from './ui/Buttom';
+import Button from './ui/Button';
 
 export default {
   components: {
     Header,
     Link,
-    Buttom
+    Button
   },
   props: {
     name: String,
