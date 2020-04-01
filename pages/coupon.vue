@@ -43,11 +43,12 @@ export default {
     FromCoupon
   },
   methods: {
-    handleClick() {
-      sendWhatsappMessage(
-        this.restaurant.phone,
-        this.restaurant.coupons[this.$route.query.c].title
-      );
+    handleClick(form) {
+      let message = `Mi nombre: ${form.name}`;
+      message += `\nMi correo: ${form.email}`;
+      message += `\n\n*Cupon*`;
+      message += `\n${this.restaurant.coupons[this.$route.query.c].title}`;
+      sendWhatsappMessage(this.restaurant.phone, message);
       console.warn("Send");
     }
   },

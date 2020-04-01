@@ -34,7 +34,7 @@ export const restaurants = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS5ByNypP6wStW4FH7shSbitq8YW8QXGmHotyZag21v43GymbuT&usqp=CAU",
     location: "Guadalajara, Jalisco",
     website: "https://www.facebook.com/caligaricafe/",
-    phone: "2292052338",
+    phone: "5213311804588",
     coupons: [{
       title: 'Z6 Llévate 2 por el precio de una y media',
       body: 'In the history of modern astronomy, there is probably no one greater leap forward than the building and launch of the space telesc.',
