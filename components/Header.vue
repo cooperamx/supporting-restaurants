@@ -12,10 +12,10 @@
             </h2>
             <div class="columns is-1 is-centered">
               <div class="column is-narrow">
-                <Buttom text="Soy un restaurante" primary />
+                <Button text="Soy un restaurante" primary />
               </div>
               <div class="column is-narrow">
-                <Buttom text="Ver restaurantes" />
+                <Button text="Ver restaurantes" />
               </div>
             </div>
           </div>
@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import Buttom from './ui/Buttom';
+import Button from './ui/Button';
 
 export default {
   components: {
-    Buttom
+    Button
   }
 };
 </script>
