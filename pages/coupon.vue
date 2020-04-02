@@ -2,11 +2,16 @@
   <Layout>
     <div slot="header">
       <CompanyHero
+        compact
         :name="restaurant.name"
         :address="restaurant.location"
         :website="restaurant.website"
         :logo="restaurant.image"
-      />
+      >
+        <Link slot="breadcrumb" :to="{name: 'company', query: {r: this.restaurant.uri}}">
+          <span>&lt; {{ this.restaurant.name }}</span>
+        </Link>
+      </CompanyHero>
     </div>
     <div slot="main">
       <div class="columns">
@@ -31,6 +36,7 @@
 import Layout from "../components/Layout";
 import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
+import Link from "../components/ui/Link";
 import FromCoupon from "../components/FromCoupon";
 import { sendWhatsappMessage } from "../libs/utils";
 import { restaurants } from "../libs/dbStatic";
@@ -40,6 +46,7 @@ export default {
     Layout,
     CompanyHero,
     Coupon,
+    Link,
     FromCoupon
   },
   methods: {

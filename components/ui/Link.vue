@@ -1,18 +1,20 @@
 <template>
-  <a class="link is-size-7" :href="href">
-    <span>{{ label }}</span>
+  <a class="link is-size-7" v-if="href" :href="href">
+    <slot></slot>
   </a>
+  <nuxt-link class="link is-size-7" v-else :to="to">
+    <slot></slot>
+  </nuxt-link>
 </template>
 
 <script>
-// TODO:
-// include back navigation @click="$router.go(-1)"
-// and use n-link component
-
 export default {
   props: {
-    label: String,
     href: String,
+    to: {
+      type: Object,
+      default: () => ({}),
+    }
   }
 }
 </script>
