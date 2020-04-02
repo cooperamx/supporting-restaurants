@@ -45,7 +45,8 @@ export default {
     ['@nuxtjs/google-gtag', {
       id: 'UA-162434353-1',
       // debug: true
-    }]
+    }],
+    ['vue-scrollto/nuxt', { duration: 400 }],
   ],
   /*
   ** Build configuration
@@ -61,6 +62,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    // eslint-disable-next-line no-unused-vars
     extend (config, ctx) {
     }
   }

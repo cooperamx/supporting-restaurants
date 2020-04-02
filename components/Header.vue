@@ -14,10 +14,10 @@
             </h2>
             <div class="columns is-1 is-centered">
               <div class="column is-narrow">
-                <Button text="Soy un restaurante" primary />
+                <Button text="Soy un restaurante" primary @click="goToForm" />
               </div>
               <div class="column is-narrow">
-                <Button text="Ver restaurantes" />
+                <Button text="Ver restaurantes" v-scroll-to="'#restaurants'" />
               </div>
             </div>
           </div>
@@ -33,6 +33,11 @@ import Button from './ui/Button';
 export default {
   components: {
     Button
+  },
+  methods: {
+    goToForm() {
+      window.open("https://form.coopera.mx", '__blank');
+    }
   }
 };
 </script>

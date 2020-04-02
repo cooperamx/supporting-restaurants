@@ -61,7 +61,6 @@ export default {
       message += `\n\n*Cupon*`;
       message += `\n${this.restaurant.coupons[this.$route.query.c].title}`;
       sendWhatsappMessage(this.restaurant.phone, message);
-      console.warn('Send');
     }
   },
   data() {

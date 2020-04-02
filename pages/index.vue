@@ -3,7 +3,7 @@
     <div slot="header">
       <Header />
     </div>
-    <div slot="main">
+    <div slot="main" id="restaurants">
       <RestaurantGrid />
     </div>
   </Layout>
