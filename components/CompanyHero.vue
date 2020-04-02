@@ -1,11 +1,14 @@
 <template>
-  <section class="hero">
+  <section v-bind:class="{
+    hero: true,
+    'hero--compact': compact,
+  }">
     <div class="hero-body">
       <div class="container is-widescreen">
         <Header />
-        <div class="section">
-          <Link label="< Volver a inicio" href="/" />
-        </div>
+        <span class="breadcrumb-container">
+          <slot name="breadcrumb"></slot>
+        </span>
         <div class="section company-info columns is-vcentered is-mobile">
           <div class="column is-narrow">
             <figure class="image is-96x96">
@@ -15,7 +18,9 @@
           <div class="column is-text-left">
             <h1 class="is-size-3 has-text-weight-bold">{{ name }}</h1>
             <p class="is-size-7">{{ address }}</p>
-            <Link label="Visitar sitio web" :href="website" />
+            <Link :href="website">
+              <span>Visitar sitio web</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -39,6 +44,7 @@ export default {
     address: String,
     website: String,
     logo: String,
+    compact: Boolean,
   },
 };
 </script>
@@ -50,12 +56,15 @@ export default {
   background-color: var(--head-bg)
   color: var(--main-text)
   height: 17rem
+  overflow: hidden
+  &--compact
+    height: 8rem
 
 .hero-body
-  padding: 1rem 1rem 2rem 1rem
+  padding: 1rem
 
 .section
-  padding: 0 0 1.5rem 0
+  padding: 1.5rem 0
 
 .company-info
   color: #3E3E3E
@@ -64,10 +73,19 @@ export default {
   border: solid 0.25rem white
   border-radius: 0.25rem
 
-.link
-  color: var(--primary)
+.breadcrumb-container
+  padding-left: 0;
 
 +desktop()
+  .hero--compact
+      height: 9.5rem
+
+  .hero-body
+    padding: 1rem 1rem 1.5rem 1rem
+
   .section
-    padding: 0 1.5rem 1.5rem 1.5rem
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem
+
+  .breadcrumb-container
+    padding-left: 1.5rem;
 </style>

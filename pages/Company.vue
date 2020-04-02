@@ -6,7 +6,11 @@
         :address="restaurant.location"
         :website="restaurant.website"
         :logo="restaurant.image"
-      />
+      >
+        <Link slot="breadcrumb" :to="{name: 'index'}">
+          <span>&lt; Volver a inicio</span>
+        </Link>
+      </CompanyHero>
     </div>
     <div slot="main">
       <div class="columns is-multiline">
@@ -27,6 +31,7 @@
 import Layout from "../components/Layout";
 import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
+import Link from "../components/ui/Link";
 import { restaurants } from "../libs/dbStatic";
 
 export default {
@@ -34,13 +39,14 @@ export default {
     Layout,
     CompanyHero,
     Coupon,
+    Link,
   },
   methods: {
     handlerClick(uri, couponId) {
       console.warn(uri);
 
       this.$router.push({
-        path: `/coupon`,
+        name: 'coupon',
         query: {
           r: uri,
           c: couponId
