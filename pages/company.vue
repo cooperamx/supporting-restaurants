@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// comment
 import Layout from "../components/Layout";
 import CompanyHero from "../components/CompanyHero";
 import Coupon from "../components/ui/Coupon";
