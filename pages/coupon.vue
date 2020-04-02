@@ -8,21 +8,26 @@
         :website="restaurant.website"
         :logo="restaurant.image"
       >
-        <Link slot="breadcrumb" :to="{name: 'company', query: {r: this.restaurant.uri}}">
+        <nav-link
+          slot="breadcrumb"
+          :to="{ name: 'company', query: { r: this.restaurant.uri } }"
+        >
           <span>&lt; {{ this.restaurant.name }}</span>
-        </Link>
+        </nav-link>
       </CompanyHero>
     </div>
     <div slot="main">
       <div class="columns">
         <div class="column">
-          <h2 class="is-size-3 has-text-weight-bold">¡Estás a un paso de obtener tu cupón! 🤩</h2>
+          <h2 class="is-size-3 has-text-weight-bold">
+            ¡Estás a un paso de obtener tu cupón! 🤩
+          </h2>
         </div>
       </div>
       <div class="columns is-vcentered">
-        <div class="column is-half">
-          <Coupon :title="coupon.title" :body="coupon.body" />
-            <FromCoupon :name="restaurant.name" @click="handleClick" />
+        <div class="column is-4">
+          <Coupon :title="coupon.title" :body="coupon.body" preview />
+          <FromCoupon :name="restaurant.name" @click="handleClick" />
         </div>
         <div class="column is-half is-hidden-touch">
           <img src="../assets/coupons.png" alt="coupons" />
@@ -33,20 +38,20 @@
 </template>
 
 <script>
-import Layout from "../components/Layout";
-import CompanyHero from "../components/CompanyHero";
-import Coupon from "../components/ui/Coupon";
-import Link from "../components/ui/Link";
-import FromCoupon from "../components/FromCoupon";
-import { sendWhatsappMessage } from "../libs/utils";
-import { restaurants } from "../libs/dbStatic";
+import Layout from '../components/Layout';
+import CompanyHero from '../components/CompanyHero';
+import Coupon from '../components/ui/Coupon';
+import NavLink from '../components/ui/Link';
+import FromCoupon from '../components/FromCoupon';
+import { sendWhatsappMessage } from '../libs/utils';
+import { restaurants } from '../libs/dbStatic';
 
 export default {
   components: {
     Layout,
     CompanyHero,
     Coupon,
-    Link,
+    NavLink,
     FromCoupon
   },
   methods: {
@@ -56,7 +61,7 @@ export default {
       message += `\n\n*Cupon*`;
       message += `\n${this.restaurant.coupons[this.$route.query.c].title}`;
       sendWhatsappMessage(this.restaurant.phone, message);
-      console.warn("Send");
+      console.warn('Send');
     }
   },
   data() {

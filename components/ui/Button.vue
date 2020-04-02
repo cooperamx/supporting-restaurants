@@ -35,7 +35,6 @@ export default {
   padding: .5rem 1rem;
   cursor: pointer;
   user-select: none;
-  width: 100%;
 }
 
 .__primary {

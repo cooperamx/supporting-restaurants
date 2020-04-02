@@ -7,9 +7,9 @@
         :website="restaurant.website"
         :logo="restaurant.image"
       >
-        <Link slot="breadcrumb" :to="{name: 'index'}">
+        <nav-link slot="breadcrumb" :to="{ name: 'index' }">
           <span>&lt; Volver a inicio</span>
-        </Link>
+        </nav-link>
       </CompanyHero>
     </div>
     <div slot="main">
@@ -29,18 +29,18 @@
 
 <script>
 // comment
-import Layout from "../components/Layout";
-import CompanyHero from "../components/CompanyHero";
-import Coupon from "../components/ui/Coupon";
-import Link from "../components/ui/Link";
-import { restaurants } from "../libs/dbStatic";
+import Layout from '../components/Layout';
+import CompanyHero from '../components/CompanyHero';
+import Coupon from '../components/ui/Coupon';
+import NavLink from '../components/ui/Link';
+import { restaurants } from '../libs/dbStatic';
 
 export default {
   components: {
     Layout,
     CompanyHero,
     Coupon,
-    Link,
+    NavLink
   },
   methods: {
     handlerClick(uri, couponId) {
@@ -55,10 +55,10 @@ export default {
       });
     }
   },
-  data () {
+  data() {
     return {
       restaurant: restaurants.find(r => r.uri === this.$route.query.r)
-    }
+    };
   }
 };
 </script>
