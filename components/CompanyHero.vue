@@ -20,9 +20,9 @@
           <div class="column is-text-left">
             <h1 class="is-size-3 has-text-weight-bold">{{ name }}</h1>
             <p class="is-size-7">{{ address }}</p>
-            <Link :href="website">
+            <nav-link :href="website">
               <span>Visitar sitio web</span>
-            </Link>
+            </nav-link>
           </div>
         </div>
       </div>
@@ -32,12 +32,12 @@
 
 <script>
 import Header from './ui/Header';
-import Link from './ui/Link';
+import NavLink from './ui/Link';
 
 export default {
   components: {
     Header,
-    Link
+    NavLink
   },
   props: {
     name: String,
