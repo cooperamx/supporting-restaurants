@@ -29,7 +29,7 @@
           <Coupon :title="coupon.title" :body="coupon.body" preview />
           <FromCoupon :name="restaurant.name" @click="handleClick" />
         </div>
-        <div class="column is-half is-hidden-touch">
+        <div class="column is-8 is-hidden-touch">
           <img src="../assets/coupons.png" alt="coupons" />
         </div>
       </div>
