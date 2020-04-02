@@ -1,8 +1,10 @@
 <template>
-  <section v-bind:class="{
-    hero: true,
-    'hero--compact': compact,
-  }">
+  <section
+    v-bind:class="{
+      hero: true,
+      'hero--compact': compact
+    }"
+  >
     <div class="hero-body">
       <div class="container is-widescreen">
         <Header />
@@ -12,7 +14,7 @@
         <div class="section company-info columns is-vcentered is-mobile">
           <div class="column is-narrow">
             <figure class="image is-96x96">
-              <img :src="logo">
+              <img :src="logo" />
             </figure>
           </div>
           <div class="column is-text-left">
@@ -29,23 +31,21 @@
 </template>
 
 <script>
-import Header from './ui/Header';
-import Link from './ui/Link';
-import Button from './ui/Button';
+import Header from "./ui/Header";
+import Link from "./ui/Link";
 
 export default {
   components: {
     Header,
-    Link,
-    Button
+    Link
   },
   props: {
     name: String,
     address: String,
     website: String,
     logo: String,
-    compact: Boolean,
-  },
+    compact: Boolean
+  }
 };
 </script>
 

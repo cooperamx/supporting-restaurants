@@ -8,7 +8,9 @@
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
             <h2 class="subtitle">
-              Queremos ayudar a nuestros restaurantes locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.
+              Queremos ayudar a nuestros restaurantes locales a tener un medio
+              para hacer preventas o recibir donaciones de manera digital, y así
+              apoyarlos en la crisis.
             </h2>
             <div class="columns is-1 is-centered">
               <div class="column is-narrow">
@@ -26,7 +28,7 @@
 </template>
 
 <script>
-import Button from './ui/Button';
+import Button from "./ui/Button";
 
 export default {
   components: {
@@ -37,8 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero {
-  background:
-    url(../assets/header-01.png) left bottom no-repeat,
+  background: url(../assets/header-01.png) left bottom no-repeat,
     url(../assets/header-02.png) right bottom no-repeat;
   background-color: var(--head-bg);
   background-size: 30%;
@@ -49,8 +50,8 @@ export default {
 
   &::before {
     position: absolute;
-    content: '';
-    height: 200vw;;
+    content: "";
+    height: 200vw;
     width: 300vw;
     border-radius: 100%;
     background: var(--main-bg);
@@ -62,7 +63,7 @@ export default {
     color: var(--primary);
     font-size: 3rem;
     font-weight: 800;
-    font-family: 'Poppins';
+    font-family: "Poppins";
   }
 }
 
