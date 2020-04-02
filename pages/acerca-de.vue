@@ -66,6 +66,6 @@
 </template>
 <script>
 export default {
-  layout: "general"
+  layout: 'general'
 };
 </script>

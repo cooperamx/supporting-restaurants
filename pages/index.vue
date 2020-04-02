@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Layout from "~/components/Layout.vue";
-import Header from "~/components/Header.vue";
-import RestaurantGrid from "~/components/RestaurantGrid.vue";
+import Layout from '~/components/Layout.vue';
+import Header from '~/components/Header.vue';
+import RestaurantGrid from '~/components/RestaurantGrid.vue';
 
 export default {
   components: {

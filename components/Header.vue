@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import Button from "./ui/Button";
+import Button from './ui/Button';
 
 export default {
   components: {
@@ -50,7 +50,7 @@ export default {
 
   &::before {
     position: absolute;
-    content: "";
+    content: '';
     height: 200vw;
     width: 300vw;
     border-radius: 100%;
@@ -63,7 +63,7 @@ export default {
     color: var(--primary);
     font-size: 3rem;
     font-weight: 800;
-    font-family: "Poppins";
+    font-family: 'Poppins';
   }
 }
 

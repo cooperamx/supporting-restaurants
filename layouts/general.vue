@@ -29,8 +29,8 @@
   </div>
 </template>
 <script>
-import Footer from "~/components/Footer";
-import Button from "~/components/ui/Button";
+import Footer from '~/components/Footer';
+import Button from '~/components/ui/Button';
 
 export default {
   components: {
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~bulma/sass/utilities/_all";
+@import '~bulma/sass/utilities/_all';
 
 .header {
   border-radius: 2rem;

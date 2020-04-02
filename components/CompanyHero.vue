@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import Header from "./ui/Header";
-import Link from "./ui/Link";
+import Header from './ui/Header';
+import Link from './ui/Link';
 
 export default {
   components: {

@@ -4,26 +4,27 @@
       <div class="columns is-vcentered">
         <div class="column is-one-quarter has-text-left">
           <p>
-            <a href="/" class="logo is-size-4 has-text-weight-bold"
-              >Coopera.mx</a
-            >
+            <a href="/" class="logo is-size-4 has-text-weight-bold">
+              Coopera.mx
+            </a>
           </p>
         </div>
         <div class="column has-text-right has-text-left-mobile">
-          <nuxt-link class="link is-size-7 is-block-mobile" to="/acerca-de"
-            >Acerca de</nuxt-link
-          >
-          <nuxt-link class="link is-size-7 is-block-mobile" to="/como-funciona"
-            >Cómo funciona</nuxt-link
-          >
+          <nuxt-link class="link is-size-7 is-block-mobile" to="/acerca-de">
+            Acerca de
+          </nuxt-link>
+          <nuxt-link class="link is-size-7 is-block-mobile" to="/como-funciona">
+            Cómo funciona
+          </nuxt-link>
           <nuxt-link
             class="link is-size-7 is-block-mobile"
             to="/terminos-y-condiciones"
-            >Términos y condiciones</nuxt-link
           >
-          <nuxt-link class="link is-size-7 is-block-mobile" to="/apoyar"
-            >Apoya este proyecto</nuxt-link
-          >
+            Términos y condiciones
+          </nuxt-link>
+          <nuxt-link class="link is-size-7 is-block-mobile" to="/apoyar">
+            Apoya este proyecto
+          </nuxt-link>
         </div>
       </div>
     </div>
