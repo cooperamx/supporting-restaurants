@@ -30,12 +30,11 @@ export default {
   border-radius: 2rem;
   color: var(--primary);
   display: inline-block;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: 600;
+  font-size: 1rem;
   padding: .5rem 1rem;
   cursor: pointer;
   user-select: none;
-  width: 100%;
 }
 
 .__primary {

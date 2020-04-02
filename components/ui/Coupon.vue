@@ -3,12 +3,15 @@
     <div class="__coupon">
       <div class="__box">
         <div class="__text">
-          <h3>{{title}}</h3>
-          <p>{{body}}</p>
+          <h3>{{ title }}</h3>
+          <p>{{ body }}</p>
         </div>
-        <div class="columns">
-          <div class="__action column is-narrow">
-            <Button text="Obtener cupón" primary @click="handleClick" />
+        <div v-if="!preview">
+          <div class="__line"></div>
+          <div class="columns">
+            <div class="__action column is-narrow">
+              <Button text="Obtener cupón" primary @click="handleClick" />
+            </div>
           </div>
         </div>
       </div>
@@ -19,7 +22,7 @@
 </template>
 
 <script>
-import Button from './Button'
+import Button from './Button';
 
 export default {
   components: {
@@ -27,14 +30,16 @@ export default {
   },
   props: {
     title: String,
-    body: String
+    body: String,
+    disabled: Boolean,
+    preview: Boolean
   },
   methods: {
-    handleClick (e) {
+    handleClick(e) {
       this.$emit('click', e);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,6 +49,7 @@ export default {
   overflow: hidden;
   padding: 0.75rem;
   margin: -0.75rem;
+  max-width: 500px;
 }
 
 .__box {
@@ -52,21 +58,24 @@ export default {
   border: solid 1px rgba(151, 151, 151, 0.25);
   padding: 2rem 2.5rem 1rem 2.5rem;
   margin: 5px;
-  box-shadow: 0px 12px 16px -12px rgba(0,0,0,0.2);
+  box-shadow: 0px 12px 16px -12px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-.__box .__text {
+.__line {
   border: dashed 3px rgb(198, 198, 198);
   border-width: 0 0 2px 0;
+  margin-bottom: 0.5rem;
+}
+
+.__box .__text {
   padding-bottom: 1rem;
-  margin-bottom: .5rem;
 }
 
 .__box .__text h3 {
   font-weight: bold;
-  margin-bottom: .5rem;
-  color: rgba(72, 71, 69, 0.7)
+  margin-bottom: 0.5rem;
+  color: rgba(72, 71, 69, 0.7);
 }
 
 .__box .__action {
@@ -124,6 +133,4 @@ $diameter-circle: 20px;
     }
   }
 }
-
-
 </style>
