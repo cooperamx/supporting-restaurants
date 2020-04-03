@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     goToForm() {
-      window.open("https://form.coopera.mx", '__blank');
+      window.open('https://form.coopera.mx', '__blank');
     }
   }
 };
