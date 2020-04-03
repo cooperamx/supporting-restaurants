@@ -44,8 +44,6 @@ export default {
   },
   methods: {
     handlerClick(uri, couponId) {
-      console.warn(uri);
-
       this.$router.push({
         name: 'coupon',
         query: {
