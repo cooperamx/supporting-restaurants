@@ -28,7 +28,7 @@ export default {
 @import '~bulma/sass/utilities/_all'
 
 main
-  padding: 1rem
+  padding: 2rem 1rem
   +desktop()
     padding: 2rem
 
