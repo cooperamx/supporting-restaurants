@@ -29,6 +29,7 @@ export default {
     Button
   },
   props: {
+    id: String,
     title: String,
     body: String,
     disabled: Boolean,

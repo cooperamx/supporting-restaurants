@@ -65,7 +65,7 @@ export default {
   },
   data() {
     return {
-      restaurant: restaurants.find(r => r.uri === this.$route.query.r)
+      restaurant: restaurants.find(r => r.slug === this.$route.query.r)
     };
   },
   computed: {

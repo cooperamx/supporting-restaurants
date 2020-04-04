@@ -2,26 +2,15 @@
   <div>
     <header class="hero">
       <div class="hero-body">
-        <div class="header level is-mobile has-background-white">
-          <div class="level-left">
-            <div class="level-item">
-              <h2 class="is-size-4 is-size-6-mobile has-text-weight-bold">
-                <a class="logo" href="/">Coopera.mx</a>
-              </h2>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item is-hidden-touch">
-              <nuxt-link class="link is-size-7 has-text-weight-bold" to="/">
-                <Button class="is-size-7" text="Inicio" primary />
-              </nuxt-link>
-            </div>
-          </div>
+        <div class="container is-widescreen">
+          <Header />
         </div>
       </div>
     </header>
     <section class="content">
-      <nuxt />
+      <div class="container is-widescreen">
+        <nuxt />
+      </div>
     </section>
     <footer>
       <Footer />
@@ -30,18 +19,27 @@
 </template>
 <script>
 import Footer from '~/components/Footer';
-import Button from '~/components/ui/Button';
+import Header from '~/components/ui/Header';
 
 export default {
   components: {
     Footer,
-    Button
+    Header
   }
 };
 </script>
 
 <style lang="scss" scoped>
 @import '~bulma/sass/utilities/_all';
+
+.hero {
+  background-color: var(--head-bg);
+  color: var(--main-text);
+}
+
+.hero-body {
+  padding: 1rem;
+}
 
 .header {
   border-radius: 2rem;
