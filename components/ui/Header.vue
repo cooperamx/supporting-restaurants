@@ -34,6 +34,7 @@ export default {
 .header
   border-radius: 2rem
   padding: 0.5rem
+  margin: 0
 
 .logo
   color: var(--primary)
