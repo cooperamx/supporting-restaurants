@@ -3,7 +3,7 @@ export const restaurants = [
     uri: "louieburger",
     name: "Louie Burger",
     image:
-      "https://static-images.ifood.com.br/image/upload/f_auto,t_high/logosgde/f4d0e3a5-2028-431d-8ffd-466f07c50ad7_LOUIEBURGER.png",
+      "/business/boroder_001.jpg",
     location: "Guadalajara, Jalisco",
     website: "https://louie-burguer.com.mx",
     phone: "526421150094",
