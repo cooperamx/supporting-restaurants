@@ -66,10 +66,6 @@ export default {
 .image
   border: solid 0.25rem white
   border-radius: 0.25rem
-  display: flex
-  align-items: center
-  justify-content: center
-  background: white
 
 .breadcrumb-container:not(:empty)
   padding-top: 1.5rem
