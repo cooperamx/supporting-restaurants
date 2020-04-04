@@ -1,10 +1,11 @@
 <template>
-  <div class="column is-half-mobile is-one-quarter-tablet is-one-quarter-desktop is-2-widescreen">
+  <div
+    class="column is-half-mobile is-one-quarter-tablet is-one-quarter-desktop is-2-widescreen"
+  >
     <div class="product-item" @click="$emit('click')">
-      <img
-        class="product-item__photo"
-        :src="image"
-      />
+      <div class="product-item__ratio">
+        <img class="product-item__photo" :src="image" />
+      </div>
       <p class="product-item__name">
         {{ name }}
       </p>
@@ -22,40 +23,53 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     location: {
       type: String,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .product-item {
   padding: 16px;
-  color: #7E7E7E;
-  border: 1px solid #E5E5E5;
+  color: #7e7e7e;
+  border: 1px solid #e5e5e5;
   border-radius: 16px;
   box-shadow: 0 16px 16px -16px rgba(0, 0, 0, 0.16);
 
   cursor: pointer;
   align-items: center;
-}
 
-.product-item__photo {
-  border-radius: 16px;
-  margin-bottom: 8px;
-  width: 100%;
-  height: auto;
-}
+  &__ratio {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* 1:1 Aspect Ratio */
+  }
 
-.product-item__name {
-  font-weight: bold;
+  &__photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-position: center;
+    object-fit: contain;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__name {
+    font-weight: bold;
+  }
 }
 </style>
