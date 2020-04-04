@@ -8,10 +8,10 @@
     <div class="hero-body">
       <div class="container is-widescreen">
         <Header />
-        <span class="breadcrumb-container">
+        <div class="breadcrumb-container">
           <slot name="breadcrumb"></slot>
-        </span>
-        <div class="section company-info columns is-vcentered is-mobile">
+        </div>
+        <div v-if="!compact" class="company-info columns is-vcentered is-mobile">
           <div class="column is-narrow">
             <figure class="image is-96x96">
               <img :src="logo" />
@@ -45,7 +45,7 @@ export default {
     website: String,
     logo: String,
     compact: Boolean
-  }
+  },
 };
 </script>
 
@@ -55,37 +55,29 @@ export default {
 .hero
   background-color: var(--head-bg)
   color: var(--main-text)
-  height: 17rem
-  overflow: hidden
-  &--compact
-    height: 8rem
 
 .hero-body
   padding: 1rem
 
-.section
-  padding: 1.5rem 0
-
 .company-info
   color: #3E3E3E
+  padding-top: 1.5rem
 
 .image
   border: solid 0.25rem white
   border-radius: 0.25rem
 
-.breadcrumb-container
-  padding-left: 0;
+.breadcrumb-container:not(:empty)
+  padding-top: 1.5rem
 
 +desktop()
-  .hero--compact
-      height: 9.5rem
-
   .hero-body
     padding: 1rem 1rem 1.5rem 1rem
 
   .section
     padding: 1.5rem 1.5rem 1.5rem 1.5rem
 
-  .breadcrumb-container
-    padding-left: 1.5rem;
+  .company-info,
+  .breadcrumb-container:not(:empty)
+    padding: 1.5rem 1.5rem 0 1.5rem;
 </style>
