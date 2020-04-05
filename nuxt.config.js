@@ -37,7 +37,7 @@ export default {
    */
   router: {
     extendRoutes(routes, resolve) {
-      const index = routes.findIndex(route => route.path === '/:commerce');
+      const index = routes.findIndex(route => route.name === 'comercio-slug');
 
       routes[index] = {
         ...routes[index],

@@ -31,9 +31,7 @@ export default {
     Footer
   },
   data() {
-    const commerce = restaurants.find(
-      r => r.slug === this.$route.params.commerce
-    );
+    const commerce = restaurants.find(r => r.slug === this.$route.params.slug);
     if (!commerce) this.$router.replace('/');
     return {
       commerce

@@ -34,7 +34,7 @@ export default {
     handleClick(form) {
       let message = `Mi nombre: ${form.name}`;
       message += `\nMi correo: ${form.email}`;
-      message += `\n\n*Cupon*`;
+      message += `\n\n*Cupón*`;
       message += `\n${
         this.restaurant.coupons[this.$route.params.coupon].title
       }`;
@@ -42,9 +42,7 @@ export default {
     }
   },
   data() {
-    const commerce = restaurants.find(
-      r => r.slug === this.$route.params.commerce
-    );
+    const commerce = restaurants.find(r => r.slug === this.$route.params.slug);
     const coupon = commerce.coupons.find(
       c => c.id === this.$route.params.coupon
     );

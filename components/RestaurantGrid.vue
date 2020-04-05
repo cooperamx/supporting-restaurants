@@ -23,7 +23,7 @@ export default {
   methods: {
     handleClick(slug) {
       this.$router.push({
-        path: `/${slug}`
+        path: `/comercio/${slug}`
       });
     }
   },

@@ -55,7 +55,7 @@ export default {
     breadcrumb() {
       const { params } = this.$route;
       const text = params.coupon ? 'Volver al comercio' : 'Volver al inicio';
-      const path = params.coupon ? '/' + params.commerce : '/';
+      const path = params.coupon ? '/comercio/' + params.slug : '/';
       return {
         text,
         path
