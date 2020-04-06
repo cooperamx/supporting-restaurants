@@ -1,18 +1,36 @@
+/* eslint-env node */
+
+const title = 'Coopera.mx #JuntosPodemosLogarlos';
+const description = 'Queremos ayudar a nuestros restaurantes locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.';
+const website = 'https://coopera.mx/';
+const banner = '/meta-banner.png';
+
 export default {
   mode: 'spa',
   /*
    ** Headers of the page
    */
   head: {
-    title: 'Coopera.mx - Juntos podemos!' || process.env.npm_package_name || '',
+    title: title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+      // Primary Meta Tags
+      { name: 'title', content: title },
+      { hid: 'description', name: 'description', content: description },
+      // Open Graph / Facebook
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: website },
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:image', content: banner },
+      // Twitter
+      { property: 'twitter:card', content: 'summary_large_image' },
+      { property: 'twitter:url', content: website },
+      { property: 'twitter:title', content: title },
+      { property: 'twitter:description', content: description },
+      { property: 'twitter:image', content: banner }
+
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
