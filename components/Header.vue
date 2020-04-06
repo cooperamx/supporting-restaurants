@@ -8,16 +8,16 @@
         <div class="columns">
           <div class="column is-half is-offset-one-quarter">
             <h2 class="subtitle">
-              Queremos ayudar a nuestros restaurantes locales a tener un medio
+              Queremos ayudar a nuestros comercios locales a tener un medio
               para hacer preventas o recibir donaciones de manera digital, y así
               apoyarlos en la crisis.
             </h2>
             <div class="columns is-1 is-centered">
               <div class="column is-narrow">
-                <Button text="Soy un restaurante" primary @click="goToForm" />
+                <Button text="Soy un comercio" primary @click="goToForm" />
               </div>
               <div class="column is-narrow">
-                <Button text="Ver restaurantes" v-scroll-to="'#restaurants'" />
+                <Button text="Ver comercios" v-scroll-to="'#restaurants'" />
               </div>
             </div>
           </div>

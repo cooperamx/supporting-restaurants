@@ -11,7 +11,7 @@
       <div class="level-item">
         <Button
           class="is-size-7"
-          text="Soy un restaurante"
+          text="Soy un comercio"
           primary
           @click="goToForm"
         />
