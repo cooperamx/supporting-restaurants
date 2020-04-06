@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import Footer from "./Footer";
+import Footer from './Footer';
 
 export default {
   components: {
-    Footer,
-  },
+    Footer
+  }
 };
 </script>
 
@@ -31,5 +31,4 @@ main
   padding: 2rem 1rem
   +desktop()
     padding: 2rem
-
 </style>
