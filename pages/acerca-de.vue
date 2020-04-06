@@ -4,7 +4,7 @@
       <div>
         <h2 class="title">¿Qué problema identificamos?</h2>
         <p>
-          Los restaurantes y comercios que cerraron por completo sus operaciones
+          Los comercios que cerraron por completo sus operaciones
           se enfrentan a un decremento de flujo de dinero que los imposibilita a
           cubrir las nóminas de su personal, la renta de su espacio, y los pone
           en un enorme riesgo como negocio local.
@@ -17,15 +17,15 @@
           crisis termine.
         </li>
         <li>
-          Vender souvenirs del restaurante.
+          Vender souvenirs.
         </li>
         <li>
-          Vender bundles de certificados entre varios restaurantes para que un
-          usuario pueda adquirir beneficios de múltiples restaurantes con un
-          precio razonable, y al final todos los restaurantes reciben efectivo.
+          Vender bundles de certificados entre varios comercios para que un
+          usuario pueda adquirir beneficios de los mismos con un
+          precio razonable, y al final todos los comercios reciben efectivo.
         </li>
         <li>
-          Publicar tu menú de productos
+          Publicar tu catálogo o menú de productos.
         </li>
         <li>
           Más opciones en camino!
@@ -38,7 +38,7 @@
         comida. Queremos apoyar con tecnología, con lo mínimo indispensable para
         poder validar ideas con restaurantes y la gente y brindar una esperanza
         al comercio local de mantener un flujo de efectivo suficiente para
-        sobrepasar nuestra crisis. Estamos unidos. #salvemosrestaurantes
+        sobrepasar nuestra crisis. Estamos unidos. #JuntosPodemosLograrlo
       </p>
 
       <h2 class="title">¿Qué seguiría en caso de que estés interesado?</h2>
