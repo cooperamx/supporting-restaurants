@@ -42,10 +42,14 @@ export default {
     }
   },
   data() {
-    const commerce = restaurants.find(r => r.slug === this.$route.params.slug);
-    const coupon = commerce.coupons.find(
-      c => c.id === this.$route.params.coupon
-    );
+    const { params } = this.$route;
+    const commerce = restaurants.find(r => r.slug === params.slug);
+    const coupon = commerce.coupons.find(c => c.id === params.coupon);
+
+    if (!coupon) {
+      this.$router.replace('/comercio/' + params.slug);
+    }
+
     return {
       commerce,
       coupon
