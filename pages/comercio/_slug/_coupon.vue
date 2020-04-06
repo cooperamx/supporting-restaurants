@@ -34,10 +34,13 @@ export default {
     handleClick(form) {
       let message = `Mi nombre: ${form.name}`;
       message += `\nMi correo: ${form.email}`;
+
+      if (form.phone) {
+        message += `\nMi teléfono: ${form.phone}`;
+      }
+
       message += `\n\n*Cupón*`;
-      message += `\n${
-        this.restaurant.coupons[this.$route.params.coupon].title
-      }`;
+      message += `\n${this.coupon.title}`;
       sendWhatsappMessage(this.commerce.phone, message);
     }
   },
