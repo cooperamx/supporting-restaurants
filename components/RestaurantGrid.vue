@@ -2,30 +2,28 @@
   <div class="container is-widescreen grid">
     <section class="columns is-multiline is-mobile">
       <RestaurantItem
-        v-for="(restaurant, index) in items"
-        :key="index"
-        :name="restaurant.name"
-        :image="restaurant.image"
-        :location="restaurant.location"
-        @click="handlerClick(restaurant.uri)"
+        v-for="commerce in items"
+        :key="commerce.slug"
+        :name="commerce.name"
+        :image="commerce.image"
+        :location="commerce.location"
+        @click="handleClick(commerce.slug)"
       />
     </section>
   </div>
 </template>
 
 <script>
-import RestaurantItem from "./RestaurantItem.vue";
-import { restaurants } from "../libs/dbStatic";
+import RestaurantItem from './RestaurantItem.vue';
+import { restaurants } from '../libs/dbStatic';
 
 export default {
-  name: "ProductGrid",
-
+  name: 'ProductGrid',
   components: { RestaurantItem },
   methods: {
-    handlerClick(uri) {
+    handleClick(slug) {
       this.$router.push({
-        path: `/company`,
-        query: { r: uri }
+        path: `/comercio/${slug}`
       });
     }
   },

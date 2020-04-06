@@ -9,7 +9,9 @@
       <div class="container is-widescreen">
         <Header />
         <div class="breadcrumb-container">
-          <slot name="breadcrumb"></slot>
+          <nav-link slot="breadcrumb" :to="breadcrumb.path">
+            <span>&lt; {{ breadcrumb.text }}</span>
+          </nav-link>
         </div>
         <div
           v-if="!compact"
@@ -21,7 +23,7 @@
             </figure>
           </div>
           <div class="column is-text-left">
-            <h1 class="is-size-3 has-text-weight-bold">{{ name }}</h1>
+            <h1 class="is-size-3 has-text-weight-bold">{{ commerceName }}</h1>
             <p class="is-size-7">{{ address }}</p>
             <nav-link :href="website">
               <span>Visitar sitio web</span>
@@ -43,11 +45,22 @@ export default {
     NavLink
   },
   props: {
-    name: String,
+    commerceName: String,
     address: String,
     website: String,
     logo: String,
     compact: Boolean
+  },
+  computed: {
+    breadcrumb() {
+      const { params } = this.$route;
+      const text = params.coupon ? 'Volver al comercio' : 'Volver al inicio';
+      const path = params.coupon ? '/comercio/' + params.slug : '/';
+      return {
+        text,
+        path
+      };
+    }
   }
 };
 </script>
@@ -69,10 +82,6 @@ export default {
 .image
   border: solid 0.25rem white
   border-radius: 0.25rem
-  display: flex
-  align-items: center
-  justify-content: center
-  background: white
 
 .breadcrumb-container:not(:empty)
   padding-top: 1.5rem

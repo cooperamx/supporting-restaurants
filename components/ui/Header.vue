@@ -3,16 +3,18 @@
     <div class="level-left">
       <div class="level-item">
         <h2 class="is-size-4 is-size-6-mobile has-text-weight-bold">
-          <a class="logo" href="/">Coopera.mx</a>
+          <nuxt-link class="logo" to="/">Coopera.mx</nuxt-link>
         </h2>
-      </div>
-      <div class="level-item is-hidden-touch">
-        <a class="link is-size-7 has-text-weight-bold" href="/restaurantes">Ver restaurantes</a>
       </div>
     </div>
     <div class="level-right">
       <div class="level-item">
-        <Button class="is-size-7" text="Soy un restaurante" primary />
+        <Button
+          class="is-size-7"
+          text="Soy un restaurante"
+          primary
+          @click="goToForm"
+        />
       </div>
     </div>
   </div>
@@ -24,6 +26,11 @@ import Button from './Button';
 export default {
   components: {
     Button
+  },
+  methods: {
+    goToForm() {
+      window.open('https://form.coopera.mx', '__blank');
+    }
   }
 };
 </script>

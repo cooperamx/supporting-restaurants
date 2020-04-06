@@ -64,8 +64,9 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
-  layout: 'general'
+  layout: 'main'
 };
 </script>

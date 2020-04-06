@@ -23,17 +23,21 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      required: true,
+      required: true
     },
     location: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
+  slug: {
+    type: String,
+    required: true
+  }
 };
 </script>
 
