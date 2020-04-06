@@ -35,9 +35,7 @@ export default {
       let message = `Mi nombre: ${form.name}`;
       message += `\nMi correo: ${form.email}`;
       message += `\n\n*Cupón*`;
-      message += `\n${
-        this.restaurant.coupons[this.$route.params.coupon].title
-      }`;
+      message += `\n${this.coupon.title}`;
       sendWhatsappMessage(this.commerce.phone, message);
     }
   },
