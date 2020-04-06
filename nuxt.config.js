@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 const title = 'Coopera.mx #JuntosPodemosLogarlos';
-const description = 'Queremos ayudar a nuestros restaurantes locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.';
+const description = 'Queremos ayudar a nuestros comercios locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.';
 const website = 'https://coopera.mx/';
 const banner = 'https://coopera.mx/meta-banner.png';
 

@@ -34,18 +34,25 @@ export default {
     handleClick(form) {
       let message = `Mi nombre: ${form.name}`;
       message += `\nMi correo: ${form.email}`;
+
+      if (form.phone) {
+        message += `\nMi teléfono: ${form.phone}`;
+      }
+
       message += `\n\n*Cupón*`;
-      message += `\n${
-        this.restaurant.coupons[this.$route.params.coupon].title
-      }`;
+      message += `\n${this.coupon.title}`;
       sendWhatsappMessage(this.commerce.phone, message);
     }
   },
   data() {
-    const commerce = restaurants.find(r => r.slug === this.$route.params.slug);
-    const coupon = commerce.coupons.find(
-      c => c.id === this.$route.params.coupon
-    );
+    const { params } = this.$route;
+    const commerce = restaurants.find(r => r.slug === params.slug);
+    const coupon = commerce.coupons.find(c => c.id === params.coupon);
+
+    if (!coupon) {
+      this.$router.replace('/comercio/' + params.slug);
+    }
+
     return {
       commerce,
       coupon
