@@ -6,7 +6,7 @@ export const restaurants = [
     location: 'Guadalajara, Jalisco',
     website: 'https://Boroder beer',
     bio: 'Barecito casual',
-    phone: '',
+    phone: '5522855108',
     coupons: [
       {
         id: 'a',
@@ -33,7 +33,7 @@ export const restaurants = [
     website: 'http://correcto.coffee',
     bio:
       'Somos una barra de café de especialidad en la colonia Americana, nuestra premisa es muy sencilla, servir un café bien producido, bien comprado y bien preparado en cada taza. Tenemos también alimentos, postres, cerveza artesanal y vermut.',
-    phone: '',
+    phone: '3339546405',
     coupons: [
       {
         id: 'a',
@@ -60,7 +60,7 @@ export const restaurants = [
     website: 'https://www.instagram.com/mexicodulceoficial/',
     bio:
       'Creamos experiencias basadas en dulces tradicionales mexicanos, con el fin de que los compartas con tus amigos y familiares. Siempre apoyando a pequeños artesanos y productores mexicanos, de dulces y artesanías.',
-    phone: '',
+    phone: '5528414670',
     coupons: [
       {
         id: 'a',
@@ -90,7 +90,7 @@ export const restaurants = [
     website: 'http://eltallercerveceria.mx/',
     bio:
       'Café de Especialidad Orgánico Certificado de la Finca Irlanda, Chiapas: Expendio y Cafetería.',
-    phone: '',
+    phone: '333-9041827',
     coupons: [
       {
         id: 'a',
@@ -108,7 +108,7 @@ export const restaurants = [
     website: 'http://eltallercerveceria.mx/',
     bio:
       'En el Taller Cervecería encontrarás un tributo a todos aquellos “maestros” mecánicos de nuestro México. Su concepto, un homenaje a su historia y un regalo a nuestra gastronomía mexicana, que más allá de un taco sudado, es la vida de cientos de mexicanos día a día. ',
-    phone: '',
+    phone: '5530850815',
     coupons: [
       {
         id: 'a',
@@ -140,7 +140,7 @@ export const restaurants = [
     website: 'http://eltallercerveceria.mx/',
     bio:
       'Nos dedicamos al cuidado integral de tu salud, ofreciendo alimentos orgánicos, productos naturales, accesorios eco friendly y el servicio de análisis de resonancia magnética.',
-    phone: '',
+    phone: '6441932145',
     coupons: [
       {
         id: 'a',
