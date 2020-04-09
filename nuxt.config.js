@@ -1,7 +1,8 @@
 /* eslint-env node */
 
 const title = 'Coopera.mx #JuntosPodemosLogarlos';
-const description = 'Queremos ayudar a nuestros comercios locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.';
+const description =
+  'Queremos ayudar a nuestros comercios locales a tener un medio para hacer preventas o recibir donaciones de manera digital, y así apoyarlos en la crisis.';
 const website = 'https://coopera.mx/';
 const banner = 'https://coopera.mx/meta-banner.png';
 
@@ -30,7 +31,6 @@ export default {
       { property: 'twitter:title', content: title },
       { property: 'twitter:description', content: description },
       { property: 'twitter:image', content: banner }
-
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -81,8 +81,8 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',
+    '@nuxtjs/axios',
+    '@nuxtjs/bulma', // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     [
       '@nuxtjs/google-gtag',
       {

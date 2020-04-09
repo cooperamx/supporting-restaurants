@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div class="columns">
-      <div class="column">
-        <h2 class="is-size-3 has-text-weight-bold">
-          ¡Estás a un paso de obtener tu cupón! 🤩
-        </h2>
-      </div>
+    <div>
+      <h2 class="is-size-3 has-text-weight-bold">
+        ¡Estás a un paso de obtener tu cupón! 🤩
+      </h2>
     </div>
     <div class="columns is-vcentered">
       <div class="column is-4">
         <Coupon :title="coupon.title" :body="coupon.body" preview />
-        <FromCoupon :name="commerce.name" @click="handleClick" />
+        <CouponForm :name="commerce.name" @submit="handleSubmit" />
       </div>
-      <div class="column is-8 is-hidden-touch">
+      <div class="column is-7 is-offset-1 is-hidden-touch">
         <img src="~/assets/coupons.png" alt="coupons" />
       </div>
     </div>
@@ -21,27 +19,34 @@
 
 <script>
 import Coupon from '~/components/ui/Coupon';
-import FromCoupon from '~/components/FromCoupon';
+import CouponForm from '~/components/CouponForm';
 import { sendWhatsappMessage } from '~/libs/utils';
 import { restaurants } from '~/libs/dbStatic';
-
 export default {
   components: {
     Coupon,
-    FromCoupon
+    CouponForm
   },
   methods: {
-    handleClick(form) {
-      let message = `Mi nombre: ${form.name}`;
-      message += `\nMi correo: ${form.email}`;
+    async handleSubmit(form) {
+      const { name, email, phone } = form;
+      let message = `Mi nombre: ${name}`;
+      message += `\nMi correo: ${email}`;
 
       if (form.phone) {
-        message += `\nMi teléfono: ${form.phone}`;
+        message += `\nMi teléfono: ${phone}`;
       }
 
       message += `\n\n*Cupón*`;
       message += `\n${this.coupon.title}`;
-      sendWhatsappMessage(this.commerce.phone, message);
+
+      let coupon = await this.saveCoupon({ name, email, phone });
+
+      if (coupon) sendWhatsappMessage(this.commerce.phone, message);
+      else return;
+    },
+    async saveCoupon(data) {
+      return this.$axios.$post('https://enccipenry1ma.x.pipedream.net', data);
     }
   },
   data() {
