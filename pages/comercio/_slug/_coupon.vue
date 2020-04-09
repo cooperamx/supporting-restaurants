@@ -8,7 +8,29 @@
     <div class="columns is-vcentered">
       <div class="column is-4">
         <Coupon :title="coupon.title" :body="coupon.body" preview />
-        <CouponForm :name="commerce.name" @submit="handleSubmit" />
+        <article v-show="errors.length" class="message is-danger">
+          <div class="message-header">
+            <p>Algo salio mal!</p>
+            <button
+              @click.prevent="clearErrors"
+              class="delete"
+              aria-label="delete"
+            ></button>
+          </div>
+          <div class="message-body">
+            <ul>
+              <li :key="error" v-for="error in errors">
+                {{ error }}
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <CouponForm
+          :commerceName="commerce.name"
+          :form="form"
+          @submit="handleSubmit"
+        />
       </div>
       <div class="column is-7 is-offset-1 is-hidden-touch">
         <img src="~/assets/coupons.png" alt="coupons" />
@@ -28,25 +50,36 @@ export default {
     CouponForm
   },
   methods: {
-    async handleSubmit(form) {
-      const { name, email, phone } = form;
+    clearErrors() {
+      this.errors = [];
+    },
+    async handleSubmit() {
+      const { name, email, phone } = this.form;
+      this.clearErrors();
+      if (!name) this.errors.push('Incluye tu nombre');
+      if (!email) this.errors.push('Incluye tu correo electronico');
+
+      if (this.errors.length) return;
+
       let message = `Mi nombre: ${name}`;
       message += `\nMi correo: ${email}`;
 
-      if (form.phone) {
+      if (phone) {
         message += `\nMi teléfono: ${phone}`;
       }
 
       message += `\n\n*Cupón*`;
       message += `\n${this.coupon.title}`;
 
-      let coupon = await this.saveCoupon({ name, email, phone });
-
-      if (coupon) sendWhatsappMessage(this.commerce.phone, message);
-      else return;
+      try {
+        await this.saveCoupon({ name, email, phone });
+        sendWhatsappMessage(this.commerce.phone, message);
+      } catch (e) {
+        this.errors.push('Oops! Parece que algo salio mal');
+      }
     },
     async saveCoupon(data) {
-      return this.$axios.$post('https://enccipenry1ma.x.pipedream.net', data);
+      this.$axios.$post('http://localhost:8080/api/v1/checkout', data);
     }
   },
   data() {
@@ -60,7 +93,13 @@ export default {
 
     return {
       commerce,
-      coupon
+      coupon,
+      errors: [],
+      form: {
+        name: '',
+        phone: '',
+        email: ''
+      }
     };
   }
 };

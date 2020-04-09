@@ -34,26 +34,8 @@
           />
         </div>
       </div>
-      <article v-show="errors.length" class="message is-danger">
-        <div class="message-header">
-          <p>Algo salio mal!</p>
-          <button
-            @click.prevent="clearErrors"
-            class="delete"
-            aria-label="delete"
-          ></button>
-        </div>
-        <div class="message-body">
-          <ul>
-            <li v-for="error in errors">
-              {{ error }}
-            </li>
-          </ul>
-        </div>
-      </article>
-
       <Button
-        :text="'Enviar mensaje a ' + name"
+        :text="'Enviar mensaje a ' + commerceName"
         primary
         @click.prevent="handleSubmit"
       />
@@ -65,33 +47,16 @@
 import Button from './ui/Button';
 
 export default {
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        phone: ''
-      },
-      errors: []
-    };
-  },
   components: {
     Button
   },
   props: {
-    name: String
+    commerceName: String,
+    form: Object
   },
   methods: {
-    clearErrors() {
-      this.errors = [];
-    },
     handleSubmit() {
-      this.clearErrors();
-      if (!this.form.name) this.errors.push('Incluye tu nombre');
-      if (!this.form.email) this.errors.push('Incluye tu correo electronico');
-
-      if (this.errors.length) return;
-      this.$emit('submit', this.form);
+      this.$emit('submit');
     }
   }
 };
