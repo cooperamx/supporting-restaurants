@@ -108,5 +108,8 @@ export default {
      */
     // eslint-disable-next-line no-unused-vars
     extend(config, ctx) {}
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'localhost:8080'
   }
 };

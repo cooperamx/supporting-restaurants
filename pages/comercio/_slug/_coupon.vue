@@ -79,7 +79,7 @@ export default {
       }
     },
     async saveCoupon(data) {
-      this.$axios.$post('http://localhost:8080/api/v1/checkout', data);
+      return this.$axios.$post(`${process.env.baseUrl}/api/v1/checkout`, data); // eslint-disable-line
     }
   },
   data() {
