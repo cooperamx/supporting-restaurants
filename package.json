@@ -5,18 +5,20 @@
   "author": "Iddar Olivares",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "env-cmd nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.9.7",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/google-gtag": "^1.0.4",
     "nuxt": "^2.0.0",
     "vue-scrollto": "^2.17.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.13.1",

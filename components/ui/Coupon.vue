@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div class="__coupon">
-      <div class="__box">
-        <div class="__text">
+    <div class="coupon">
+      <div class="coupon__box">
+        <div class="coupon__text">
           <h3>{{ title }}</h3>
           <p>{{ body }}</p>
         </div>
         <div v-if="!preview">
-          <div class="__line"></div>
+          <div class="coupon__line"></div>
           <div class="columns">
-            <div class="__action column is-narrow">
+            <div class="coupon__action column is-narrow">
               <Button text="Obtener cupón" primary @click="handleClick" />
             </div>
           </div>
@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.__coupon {
+.coupon {
   position: relative;
   background-color: var(--main-bg);
   overflow: hidden;
@@ -52,33 +52,35 @@ export default {
   max-width: 500px;
 }
 
-.__box {
+.coupon__box {
   background-color: #fff;
   color: var(--main-text);
   border: solid 1px rgba(151, 151, 151, 0.25);
+  border-top: solid 4px var(--primary);
+  border-bottom: solid 4px var(--primary);
   padding: 2rem 2.5rem 1rem 2.5rem;
   margin: 5px;
   box-shadow: 0px 12px 16px -12px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
-.__line {
+.coupon__line {
   border: dashed 3px rgb(198, 198, 198);
   border-width: 0 0 2px 0;
   margin-bottom: 0.5rem;
 }
 
-.__box .__text {
+.coupon__box .coupon__text {
   padding-bottom: 1rem;
 }
 
-.__box .__text h3 {
+.coupon__box .coupon__text h3 {
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: rgba(72, 71, 69, 0.7);
 }
 
-.__box .__action {
+.coupon__box .coupon__action {
   padding: 1rem;
 }
 
