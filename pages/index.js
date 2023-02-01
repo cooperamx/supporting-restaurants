@@ -45,7 +45,6 @@ export default function Index({ posts, globalData }) {
               </p>
               <div className="flex flex-col">
                 <Link
-                  target="_blank"
                   href={`https://chat.whatsapp.com/En25YNkJVFAANToWOOj1si`}
                 >
                   <a className="flex items-center py-6">
