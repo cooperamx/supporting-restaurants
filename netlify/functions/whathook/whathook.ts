@@ -6,7 +6,9 @@ export const handler: Handler = async (event, context) => {
   // parse the request body into a useable format (JSON)
   if(event.body) {
     const body = JSON.parse(event.body)
-    console.log({body})
+    console.log(
+      JSON.stringify(body, null, 2)
+    )
   }
 
   // if (
