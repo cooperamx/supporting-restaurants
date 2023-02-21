@@ -1,12 +1,20 @@
 import { Handler } from '@netlify/functions'
 
-export const handler: Handler = async (event, context) => {
-  const { name = 'stranger' } = event.queryStringParameters
+const token = process.env.WS_TOKEN
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: `Hello, ${name}!`,
-    }),
+export const handler: Handler = async (event, context) => {
+  if (
+    event.queryStringParameters &&
+    event.queryStringParameters['hub.mode'] == 'subscribe' &&
+    event.queryStringParameters['hub.verify_token'] == token
+  ) {
+    return {
+      statusCode: 200,
+      body: event.queryStringParameters['hub.challenge'],
+    }
+  } else {
+    return {
+      statusCode: 400
+    }
   }
 }
